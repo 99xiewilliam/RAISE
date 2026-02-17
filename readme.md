@@ -25,13 +25,20 @@ raise/
 ## Supported Entry Points
 - Python API: `from raisex.api.public import ...`
 - Eval CLI: `python -m raisex.cli.eval_cli ...`
-- Algo CLI: `python -m raisex.cli.algo_cli --algorithm <name> ...`
+- Algo CLI:
+  - Single: `python -m raisex.cli.algo_cli --algorithm <name> ...`
+  - Multi: `python -m raisex.cli.algo_cli --algorithms randomalgo,greedy ...`
 
 ## Quick Start
 ```bash
 cd /Users/xiaohaoxie/Desktop/raise
 python -m pip install -e .
 python -m raisex.cli.eval_cli data/datasets/triviaqa/qa.json data/datasets/triviaqa/corpus.json configs/demo.yaml both
+python -m raisex.cli.algo_cli --algorithms randomalgo,greedy \
+  --qa_json data/datasets/triviaqa/qa.json \
+  --corpus_json data/datasets/triviaqa/corpus.json \
+  --config_yaml configs/algorithms/default.yaml \
+  --eval_mode avg
 ```
 
 ## Docs Index

@@ -39,3 +39,19 @@ python -m raisex.cli.algo_cli --algorithm randomalgo \
   --samples 1 \
   --seed 1
 ```
+
+## 多算法汇总（默认推荐）
+```bash
+python -m raisex.cli.algo_cli --algorithms randomalgo,greedy \
+  --qa_json data/datasets/triviaqa/qa.json \
+  --corpus_json data/datasets/triviaqa/corpus.json \
+  --config_yaml configs/algorithms/default.yaml \
+  --eval_mode avg
+```
+
+默认输出为 JSON 数组，每个元素包含：
+- `algorithm`
+- `status` (`ok`/`failed`)
+- `returncode`
+- `metrics`
+- `error`
