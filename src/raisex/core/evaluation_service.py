@@ -267,6 +267,9 @@ def main() -> None:
         result = evaluate_rag_multimodal(
             qa_json_path, corpus_json_path, config_path, eval_mode=eval_mode
         )
+        if result.get("error"):
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+            sys.exit(2)
         outputs = result.get("outputs") or []
         report = result.get("eval_report") or {}
         per_item = report.get("per_item") or []
@@ -296,6 +299,9 @@ def main() -> None:
         config_path = sys.argv[3]
         eval_mode = sys.argv[4] if len(sys.argv) > 4 else "both"
         result = evaluate_rag(qa_json_path, corpus_json_path, config_path, eval_mode=eval_mode)
+        if result.get("error"):
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+            sys.exit(2)
         outputs = result.get("outputs") or []
         report = result.get("eval_report") or {}
         per_item = report.get("per_item") or []
