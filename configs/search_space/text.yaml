@@ -51,6 +51,8 @@ rag_search_space:
     api_key: "your api key"
 
 eval_metrics:
+  enabled:
+    allowed: ["..."]
   llmaaj:
     model_url: "your model url"
     model_name: "model name used"
