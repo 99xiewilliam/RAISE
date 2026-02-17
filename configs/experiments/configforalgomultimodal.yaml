@@ -1,8 +1,8 @@
 rag_search_space:
   rewriter:
-    model_url: ["https://api.zhizengzeng.com/v1"]
+    model_url: ["https://"]
     model_name: ["gpt-4o-mini"]
-    api_key: "sk-zk2a9670ffd66cd147a52dca250662f1334694f88bae25e4"
+    api_key: ""
     prompt_template_id: ["1", "2", "3"]
 
   chunking:
@@ -25,12 +25,12 @@ rag_search_space:
   generator:
     model_url: ["https://api.zhizengzeng.com/v1"]
     model_name: ["qwen3-vl-30b-a3b-instruct"]
-    api_key: "sk-zk2a9670ffd66cd147a52dca250662f1334694f88bae25e4"
+    api_key: ""
 
 eval_metrics:
   llmaaj:
     model_url: "https://api.zhizengzeng.com/v1"
     model_name: "gpt-4o-mini"
-    api_key: "sk-zk2a9670ffd66cd147a52dca250662f1334694f88bae25e4"
+    api_key: ""
   bert:
     model_url: "/home/cz/ragsearch-jane/models/bert-base-uncased"
